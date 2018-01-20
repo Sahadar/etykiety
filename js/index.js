@@ -1,10 +1,15 @@
 $(document).ready(function() {
 	var textareas = $('.label-textarea');
 	var title = textareas.filter('.label-title');
+	var titleFontSize = $('.label-input.label-title');
 	var subtitle = textareas.filter('.label-subtitle');
+	var subtitleFontSize = $('.label-input.label-subtitle');
 	var description = textareas.filter('.label-description');
+	var descriptionFontSize = $('.label-input.label-description');
 	var company = textareas.filter('.label-company');
+	var companyFontSize = $('.label-input.label-company');
 	var weight = textareas.filter('.label-weight');
+	var weightFontSize = $('.label-input.label-weight');
 
 	var numberInputs = $('.label-input');
 	var countNode = $('.label-count');
@@ -18,16 +23,20 @@ $(document).ready(function() {
 		labelPreview.empty();
 		for(var i = 0; i < count; i++) {(function() {
 			var label = $('<div class="label-container">' +
-				'<div class="label-section label-title">' + title.val() + '</div>' +
-				'<div class="label-section label-subtitle">' + subtitle.val() + '</div>' +
-				'<div class="label-section label-description">' + description.val() + '</div>' +
+				'<div class="label-section label-title" style="font-size:' + titleFontSize.val() + 'px;">' + title.val() + '</div>' +
+				'<div class="label-section label-subtitle" style="font-size:' + subtitleFontSize.val() + 'px;">' + subtitle.val() + '</div>' +
+				'<div class="label-section label-description" style="font-size:' + descriptionFontSize.val() + 'px;">' + description.val() + '</div>' +
 				'<div class="label label-footer">' +
-					'<div class="label-section label-company">' + company.val() + '</div>' +
-					'<div class="label-section label-weight">' + weight.val() + '</div>' +
+					'<div class="label-section label-company" style="font-size:' + companyFontSize.val() + 'px;">' + company.val() + '</div>' +
+					'<div class="label-section label-weight" style="font-size:' + weightFontSize.val() + 'px;">' + weight.val() + '</div>' +
 				'</div>' +
 			'</div>');
-			label.width(widthNode.val() + 'cm');
-			label.height(heightNode.val() + 'cm');
+			label.css({
+				'min-width' : widthNode.val() + 'cm'
+			});
+			label.css({
+				'min-height' : heightNode.val() + 'cm'
+			});
 
 			labelPreview.append(label);
 		})()}
@@ -44,6 +53,5 @@ $(document).ready(function() {
 	numberInputs.on('input', function() {
 		renderLabels();
 	});
-
-	console.log('hello world!');
+	renderLabels();
 });
