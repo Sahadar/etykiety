@@ -1,0 +1,56 @@
+.main-header {
+	text-align: center;
+}
+
+.label-field label {
+	width: 150px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.label-field .label-textarea {
+	width: calc(100% - 200px);
+	height: 50px;
+}
+
+.label-form {
+	margin-bottom: 10px;
+}
+
+.label-container {
+	border: 1px solid black;
+	height: 5cm;
+	width: 10cm;
+	box-sizing: border-box;
+	display: inline-block;
+	padding: 1mm;
+}
+
+.label-preview .label-container .label-section {
+	white-space: pre;
+}
+
+.label-preview .label-container .label-company {
+	display: block;
+	float: left;
+}
+
+.label-preview .label-container .label-weight {
+	display: block;
+	float: right;
+}
+/*
+@media not print {
+	.label-preview .label-container:first-child {
+		display: inline-block;
+	}
+}*/
+
+@media print {
+	.print-hidden-container {
+		display: none;
+	}
+	.label-preview .label-container {
+		display: inline-block;
+	}
+}

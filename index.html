@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Wypełnianie etykiet treścią</title>
+	<title>Tworzenie etykiet</title>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<link rel="stylesheet" href="css/style.css">
@@ -12,6 +12,45 @@
 </head>
 
 <body id="home">
-	<h1>Tworzenie etykiet</h1>
+	<div class="print-hidden-container">
+		<h1 class="main-header">Tworzenie etykiet</h1>
+		<div class="label-form">
+			<div class="label-field">
+				<label>Tytuł:</label>
+				<textarea class="label-textarea label-title" data-part="title"></textarea>
+			</div>
+			<div class="label-field">
+				<label>Podtytuł:</label>
+				<textarea class="label-textarea label-subtitle" data-part="subtitle"></textarea>
+			</div>
+			<div class="label-field">
+				<label>Opis:</label>
+				<textarea class="label-textarea label-description" data-part="description"></textarea>
+			</div>
+			<div class="label-field">
+				<label>Firma:</label>
+				<textarea class="label-textarea label-company" data-part="company"></textarea>
+			</div>
+			<div class="label-field">
+				<label>Waga:</label>
+				<textarea class="label-textarea label-weight" data-part="weight"></textarea>
+			</div>
+			<div class="label-field">
+				<label>Ilość:</label>
+				<input type="number" class="label-input label-count" value="1"></input>
+			</div>
+			<div class="label-field">
+				<label>Wysokość [cm]:</label>
+				<input type="number" class="label-input label-height" value="5"></input>
+			</div>
+			<div class="label-field">
+				<label>Szerokość [cm]:</label>
+				<input type="number" class="label-input label-width" value="10"></input>
+			</div>
+		</div>
+		<div class="preview-text">Preview:</div>
+	</div>
+	<div class="label-preview">
+	</div>
 </body>
 </html>
